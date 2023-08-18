@@ -1,6 +1,6 @@
 const Form = () => {
   return (
-    <form>
+    <form className="mb-5">
       <input
         type="text"
         name="task"
