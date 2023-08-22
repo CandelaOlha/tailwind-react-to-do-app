@@ -13,10 +13,20 @@ const initialStateTasks = [
 const App = () => {
   const [tasks, setTasks] = useState(initialStateTasks);
 
+  const addTask = (taskDescription) => {
+    const newTask = {
+      id: Date.now(),
+      description: taskDescription,
+      completed: false,
+    };
+
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen">
       <Header />
-      <MainContainer tasks={tasks} />
+      <MainContainer tasks={tasks} addTask={addTask} />
       <TasksFilter />
       <Footer />
     </div>
