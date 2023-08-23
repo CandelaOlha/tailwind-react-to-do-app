@@ -1,11 +1,16 @@
 import Task from "./Task";
 import PropTypes from "prop-types";
 
-const TasksContainer = ({ tasks, updateTaskStatus }) => {
+const TasksContainer = ({ tasks, updateTaskStatus, deleteTask }) => {
   return (
     <div className="bg-white shadow rounded-t">
       {tasks.map((task) => (
-        <Task key={task.id} task={task} updateTaskStatus={updateTaskStatus} />
+        <Task
+          key={task.id}
+          task={task}
+          updateTaskStatus={updateTaskStatus}
+          deleteTask={deleteTask}
+        />
       ))}
     </div>
   );
@@ -14,6 +19,7 @@ const TasksContainer = ({ tasks, updateTaskStatus }) => {
 TasksContainer.propTypes = {
   tasks: PropTypes.array.isRequired,
   updateTaskStatus: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 export default TasksContainer;

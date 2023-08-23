@@ -2,7 +2,7 @@ import CrossIcon from "./icons/CrossIcon";
 import CheckIcon from "./icons/CheckIcon";
 import PropTypes from "prop-types";
 
-const Task = ({ task, updateTaskStatus }) => {
+const Task = ({ task, updateTaskStatus, deleteTask }) => {
   return (
     <article className="flex justify-between p-5 border-b border-gray-500 border-opacity-20 border-solid">
       <button
@@ -21,7 +21,7 @@ const Task = ({ task, updateTaskStatus }) => {
       >
         {task.description}
       </p>
-      <button>
+      <button onClick={() => deleteTask(task.id)}>
         <CrossIcon />
       </button>
     </article>
@@ -31,6 +31,7 @@ const Task = ({ task, updateTaskStatus }) => {
 Task.propTypes = {
   task: PropTypes.object.isRequired,
   updateTaskStatus: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 export default Task;

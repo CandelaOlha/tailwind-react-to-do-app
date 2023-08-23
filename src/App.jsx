@@ -34,6 +34,12 @@ const App = () => {
     setTasks(newArray);
   };
 
+  const deleteTask = (id) => {
+    const newArray = tasks.filter((task) => task.id !== id);
+
+    setTasks(newArray);
+  };
+
   return (
     <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen">
       <Header />
@@ -41,6 +47,7 @@ const App = () => {
         tasks={tasks}
         addTask={addTask}
         updateTaskStatus={updateTaskStatus}
+        deleteTask={deleteTask}
       />
       <TasksFilter />
       <Footer />
