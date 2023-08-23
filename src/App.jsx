@@ -24,7 +24,14 @@ const App = () => {
   };
 
   const updateTaskStatus = (id) => {
-    console.log("Update task status", id);
+    const newArray = tasks.map((task) => {
+      if (task.id === id) {
+        task.completed = !task.completed;
+      }
+      return task;
+    });
+
+    setTasks(newArray);
   };
 
   return (
