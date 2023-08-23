@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
 
-const ClearTasks = ({ countPendingTasks }) => {
+const ClearTasks = ({ countPendingTasks, clearCompletedTasks }) => {
   return (
     <section className="bg-white rounded-b flex justify-between p-5">
       <p className="text-xs text-gray-400 font-semibold">
         {countPendingTasks()} items left
       </p>
-      <button className="text-xs text-gray-400 font-semibold">
+      <button
+        onClick={clearCompletedTasks}
+        className="text-xs text-gray-400 font-semibold"
+      >
         Clear Completed
       </button>
     </section>
@@ -15,6 +18,7 @@ const ClearTasks = ({ countPendingTasks }) => {
 
 ClearTasks.propTypes = {
   countPendingTasks: PropTypes.func.isRequired,
+  clearCompletedTasks: PropTypes.func.isRequired,
 };
 
 export default ClearTasks;

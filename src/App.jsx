@@ -46,6 +46,12 @@ const App = () => {
     return pendingTasks.length;
   };
 
+  const clearCompletedTasks = () => {
+    const uncompletedTasks = tasks.filter((task) => !task.completed);
+
+    setTasks(uncompletedTasks);
+  };
+
   return (
     <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen">
       <Header />
@@ -55,6 +61,7 @@ const App = () => {
         updateTaskStatus={updateTaskStatus}
         deleteTask={deleteTask}
         countPendingTasks={countPendingTasks}
+        clearCompletedTasks={clearCompletedTasks}
       />
       <TasksFilter />
       <Footer />

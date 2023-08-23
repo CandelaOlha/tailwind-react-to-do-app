@@ -9,6 +9,7 @@ const MainContainer = ({
   updateTaskStatus,
   deleteTask,
   countPendingTasks,
+  clearCompletedTasks,
 }) => {
   return (
     <main className="mx-10">
@@ -18,7 +19,10 @@ const MainContainer = ({
         updateTaskStatus={updateTaskStatus}
         deleteTask={deleteTask}
       />
-      <ClearTasks countPendingTasks={countPendingTasks} />
+      <ClearTasks
+        countPendingTasks={countPendingTasks}
+        clearCompletedTasks={clearCompletedTasks}
+      />
     </main>
   );
 };
@@ -29,6 +33,7 @@ MainContainer.propTypes = {
   updateTaskStatus: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
   countPendingTasks: PropTypes.func.isRequired,
+  clearCompletedTasks: PropTypes.func.isRequired,
 };
 
 export default MainContainer;
