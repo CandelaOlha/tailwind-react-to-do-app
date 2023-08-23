@@ -12,6 +12,7 @@ const initialStateTasks = [
 
 const App = () => {
   const [tasks, setTasks] = useState(initialStateTasks);
+  const [filter, setFilter] = useState("all");
 
   const addTask = (taskDescription) => {
     const newTask = {
@@ -21,6 +22,18 @@ const App = () => {
     };
 
     setTasks([...tasks, newTask]);
+  };
+
+  const filterTasks = () => {
+    if (filter === "all") {
+      return tasks;
+    } else if (filter === "active") {
+      return tasks.filter((task) => !task.completed);
+    } else if (filter === "completed") {
+      return tasks.filter((task) => task.completed);
+    } else {
+      return tasks;
+    }
   };
 
   const updateTaskStatus = (id) => {
@@ -36,19 +49,16 @@ const App = () => {
 
   const deleteTask = (id) => {
     const newArray = tasks.filter((task) => task.id !== id);
-
     setTasks(newArray);
   };
 
   const countPendingTasks = () => {
     const pendingTasks = tasks.filter((task) => !task.completed);
-
     return pendingTasks.length;
   };
 
   const clearCompletedTasks = () => {
     const uncompletedTasks = tasks.filter((task) => !task.completed);
-
     setTasks(uncompletedTasks);
   };
 
@@ -56,14 +66,14 @@ const App = () => {
     <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen">
       <Header />
       <MainContainer
-        tasks={tasks}
+        tasks={filterTasks()}
         addTask={addTask}
         updateTaskStatus={updateTaskStatus}
         deleteTask={deleteTask}
         countPendingTasks={countPendingTasks}
         clearCompletedTasks={clearCompletedTasks}
       />
-      <TasksFilter />
+      <TasksFilter setFilter={setFilter} />
       <Footer />
     </div>
   );
