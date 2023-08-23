@@ -23,10 +23,18 @@ const App = () => {
     setTasks([...tasks, newTask]);
   };
 
+  const updateTaskStatus = (id) => {
+    console.log("Update task status", id);
+  };
+
   return (
     <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen">
       <Header />
-      <MainContainer tasks={tasks} addTask={addTask} />
+      <MainContainer
+        tasks={tasks}
+        addTask={addTask}
+        updateTaskStatus={updateTaskStatus}
+      />
       <TasksFilter />
       <Footer />
     </div>
