@@ -5,24 +5,24 @@ const TasksFilter = ({ filter, setFilter }) => {
     <section className="flex justify-around bg-white rounded-md mx-10 my-5 py-5 dark:bg-gray-700">
       <button
         onClick={() => setFilter("all")}
-        className={`text-sm text-gray-400 font-semibold ${
-          filter === "all" && "text-blue-500"
+        className={`text-sm font-semibold ${
+          filter === "all" ? "text-blue-500" : "text-gray-400"
         }`}
       >
         All
       </button>
       <button
         onClick={() => setFilter("active")}
-        className={`text-sm text-gray-400 font-semibold ${
-          filter === "active" && "text-blue-500"
+        className={`text-sm font-semibold ${
+          filter === "active" ? "text-blue-500" : "text-gray-400"
         }`}
       >
         Active
       </button>
       <button
         onClick={() => setFilter("completed")}
-        className={`text-sm text-gray-400 font-semibold ${
-          filter === "completed" && "text-blue-500"
+        className={`text-sm font-semibold ${
+          filter === "completed" ? "text-blue-500" : "text-gray-400"
         }`}
       >
         Completed
