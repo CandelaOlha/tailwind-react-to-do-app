@@ -15,7 +15,7 @@ const Form = ({ addTask }) => {
       <input
         type="text"
         name="task"
-        className="container py-3 px-5 rounded-md text-xs text-gray-400 font-semibold"
+        className="container py-3 px-5 rounded-md text-xs text-gray-400 font-semibold dark:bg-gray-700 dark:text-gray-300"
         placeholder="Create a new task..."
         value={taskDescription}
         onChange={(e) => setTaskDescription(e.target.value)}

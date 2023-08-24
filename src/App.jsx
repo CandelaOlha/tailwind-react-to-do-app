@@ -63,7 +63,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen">
+    <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen dark:bg-black">
       <Header />
       <MainContainer
         tasks={filterTasks()}
@@ -73,7 +73,7 @@ const App = () => {
         countPendingTasks={countPendingTasks}
         clearCompletedTasks={clearCompletedTasks}
       />
-      <TasksFilter setFilter={setFilter} />
+      <TasksFilter filter={filter} setFilter={setFilter} />
       <Footer />
     </div>
   );

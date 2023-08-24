@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const ClearTasks = ({ countPendingTasks, clearCompletedTasks }) => {
   return (
-    <section className="bg-white rounded-b flex justify-between p-5">
+    <section className="bg-white rounded-b flex justify-between p-5 dark:bg-gray-700">
       <p className="text-xs text-gray-400 font-semibold">
         {countPendingTasks()} items left
       </p>

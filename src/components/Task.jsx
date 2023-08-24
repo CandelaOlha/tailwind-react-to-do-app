@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Task = ({ task, updateTaskStatus, deleteTask }) => {
   return (
-    <article className="flex justify-between p-5 border-b border-gray-500 border-opacity-20 border-solid">
+    <article className="flex justify-between p-5 border-b border-gray-500 border-opacity-20 border-solid dark:bg-gray-700 dark:border-opacity-70">
       <button
         onClick={() => updateTaskStatus(task.id)}
         className={`flex justify-center items-center h-5 w-5 border border-gray-500 border-solid rounded-full ${
@@ -15,7 +15,7 @@ const Task = ({ task, updateTaskStatus, deleteTask }) => {
         {task.completed && <CheckIcon />}
       </button>
       <p
-        className={`text-sm text-gray-500 font-medium ${
+        className={`text-sm text-gray-500 font-medium dark:text-gray-300 ${
           task.completed && "line-through"
         }`}
       >
