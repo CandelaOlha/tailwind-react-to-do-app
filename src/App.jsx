@@ -2,17 +2,17 @@ import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import TasksFilter from "./components/TasksFilter";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const initialStateTasks = [
-  { id: 1, description: "This is my first task", completed: true },
-  { id: 2, description: "This is my second task", completed: false },
-  { id: 3, description: "This is my third task", completed: false },
-];
+const initialStateTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 const App = () => {
   const [tasks, setTasks] = useState(initialStateTasks);
   const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (taskDescription) => {
     const newTask = {
