@@ -5,22 +5,24 @@ import PropTypes from "prop-types";
 const Task = ({ task, updateTaskStatus, deleteTask }) => {
   return (
     <article className="flex justify-between p-5 border-b border-gray-500 border-opacity-20 border-solid dark:bg-gray-700 dark:border-opacity-70">
-      <button
-        onClick={() => updateTaskStatus(task.id)}
-        className={`flex justify-center items-center h-5 w-5 border border-gray-500 border-solid rounded-full ${
-          task.completed &&
-          "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
-        }`}
-      >
-        {task.completed && <CheckIcon />}
-      </button>
-      <p
-        className={`text-sm text-gray-500 font-medium dark:text-gray-300 ${
-          task.completed && "line-through"
-        }`}
-      >
-        {task.description}
-      </p>
+      <div className="flex justify-start items-center">
+        <button
+          onClick={() => updateTaskStatus(task.id)}
+          className={`flex justify-center items-center h-[20px] w-[20px] border border-gray-500 border-solid rounded-full mr-2 ${
+            task.completed &&
+            "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+          }`}
+        >
+          {task.completed && <CheckIcon />}
+        </button>
+        <p
+          className={`max-w-[200px] text-sm text-gray-500 font-medium dark:text-gray-300 ${
+            task.completed && "line-through"
+          }`}
+        >
+          {task.description}
+        </p>
+      </div>
       <button onClick={() => deleteTask(task.id)}>
         <CrossIcon />
       </button>
