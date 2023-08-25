@@ -12,7 +12,7 @@ const MainContainer = ({
   clearCompletedTasks,
 }) => {
   return (
-    <main className="mx-10">
+    <main className="mx-10 md:max-w-2xl md:mx-auto">
       <Form addTask={addTask} />
       <TasksContainer
         tasks={tasks}

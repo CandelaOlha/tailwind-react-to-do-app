@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const TasksFilter = ({ filter, setFilter }) => {
   return (
-    <section className="flex justify-around bg-white rounded-md mx-10 my-5 py-5 dark:bg-gray-700">
+    <section className="flex justify-around bg-white rounded-md mx-10 my-5 py-5 dark:bg-gray-700 md:max-w-2xl md:mx-auto">
       <button
         onClick={() => setFilter("all")}
         className={`text-sm font-semibold ${

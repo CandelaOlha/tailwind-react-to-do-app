@@ -16,7 +16,7 @@ const Task = ({ task, updateTaskStatus, deleteTask }) => {
           {task.completed && <CheckIcon />}
         </button>
         <p
-          className={`max-w-[200px] text-sm text-gray-500 font-medium dark:text-gray-300 ${
+          className={`max-w-[200px] text-sm text-gray-500 font-medium dark:text-gray-300 md:max-w-full ${
             task.completed && "line-through"
           }`}
         >

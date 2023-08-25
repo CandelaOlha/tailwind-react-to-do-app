@@ -63,7 +63,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat h-screen dark:bg-black">
+    <div className="bg-gray-100 bg-[url('./assets/bg-mobile-light.jpg')] md:bg-[url('./assets/bg-desktop-light.jpg')] bg-no-repeat h-screen dark:bg-black dark:bg-[url('./assets/bg-mobile-dark.jpg')] md:dark:bg-[url('./assets/bg-desktop-dark.jpg')]">
       <Header />
       <MainContainer
         tasks={filterTasks()}
