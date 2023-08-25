@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="flex justify-between mx-10 py-10 md:max-w-2xl md:mx-auto">
       <h1 className="uppercase text-xl text-white font-bold tracking-widest">
-        To do App
+        Todo App
       </h1>
       <button onClick={() => setDarkMode(!darkMode)} className="text-white">
         {darkMode ? <SunIcon /> : <MoonIcon />}
